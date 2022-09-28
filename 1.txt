@@ -1,0 +1,56 @@
+a = int(input('Primul numar:'))
+b = int(input('Al doilea numar:'))
+c = int(input('Al treilea numar:'))
+
+def cmmdc(a, b, c):
+    i = 1
+    while (i<=a) and (i<=b) and (i<=c):
+        if (a%i==0) and (b%i==0) and (c%i==0):
+            div_com = i
+        i = i+1
+    return div_com
+print("Cel mai mare divizor comun ", cmmdc(a, b, c))
+
+def cmmmc(a, b, c):
+    return int((a/cmmdc(a, b, c))*b)
+print("Cel mai mic multiplu comun", cmmmc(a, b, c))
+
+def maxim(x, y, z):
+   if ((x>y) and (x>z)):
+    max=x
+   if ((y>x) and (y>z)):
+    max=y
+   else: max=z
+   return max
+print("Numarul maxim.", maxim(a, b, c))
+
+def min(x, y, z):
+     if ((x<y) and (x<z)):
+      min=x
+     if ((y<x) and (y<z)):
+      min=y
+     else: min=z
+     return min
+print("Numarul min", min(a, b, c))
+
+def totidivizori(x,y,z):
+     Div=[ ]
+     for i in range(1, cmmdc(x,y,z)+1):
+         if ((x%i==0) and (y%i==0) and (z%i==0)):
+             Div.append(i)
+print("Toti divizori", totidivizori (a,b,c))
+
+def cmmtmc(x, y, z):
+    return int((cmmdc (a, b, c))*1)
+print("Primul multiplu", cmmtmc(a,b,c))
+
+def cmmtmc(x, y, z):
+    return int((cmmdc (a, b, c))*2)
+print("Al doilea multiplu", cmmtmc(a,b,c))
+    
+def cmmtmc(x, y, z):
+    return int((cmmdc (a, b, c))*3)
+print("Al treilea multiplu", cmmtmc(a,b,c))
+
+def triunghi(x, y, z):
+     if ((x+y>z) and (y+z>x) and (x+z>y)
